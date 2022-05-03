@@ -1,8 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"flag"
 	"fmt"
+	"log"
 	"sort"
 	"strings"
 
@@ -31,7 +33,7 @@ func init() {
 	wf = aw.New()
 }
 
-func formatHierarchy(data map[string]interface{}) string {
+func formatHierarchy(data map[string]interface{}) (string, string) {
 	var result string
 	keys := make([]string, 0, len(data))
 	for key, value := range data {
@@ -53,19 +55,23 @@ func formatHierarchy(data map[string]interface{}) string {
 		}
 		isFirst = false
 	}
-	return result
+	return result, keys[len(keys)-1]
 }
 
 func formatResult(data map[string]interface{}) map[string]string {
 	result := make(map[string]string)
+	jsonStr, _ := json.Marshal(data)
+	log.Println(string(jsonStr))
 	for _, keyCheck := range []string{"objectID", "hierarchy", "content", "url", "anchor"} {
 		if keyCheck == "hierarchy" {
 			mapedData := data["hierarchy"].(map[string]interface{})
-
+			var lastLevel string
+			result["subtitle"], lastLevel = formatHierarchy(mapedData)
 			if value, ok := data["type"]; ok && value != nil && strings.HasPrefix(value.(string), "lv") {
 				result["title"] = mapedData[value.(string)].(string)
+			} else {
+				result["title"] = mapedData[lastLevel].(string)
 			}
-			result["subtitle"] = formatHierarchy(mapedData)
 		} else if value, ok := data[keyCheck]; ok && value != nil {
 			result[keyCheck] = value.(string)
 		}
