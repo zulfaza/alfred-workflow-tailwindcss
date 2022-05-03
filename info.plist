@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.zulfaza.awgo.tailwind-css</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>1BA099BD-A04F-4304-91C6-6B6CC04BFF81</key>
+		<array/>
+		<key>F3DFD0D4-B306-48DD-A915-34D3CF427B73</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1BA099BD-A04F-4304-91C6-6B6CC04BFF81</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Zul Faza</string>
+	<key>description</key>
+	<string>Search the Tailwind CSS documentation using Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Tailwind CSS Docs</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>twd</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Fetching the documentation ...</string>
+				<key>script</key>
+				<string>./program "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Everything you need to know about Tailwind CSS</string>
+				<key>title</key>
+				<string>Search the Tailwind CSS documentation</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F3DFD0D4-B306-48DD-A915-34D3CF427B73</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>1BA099BD-A04F-4304-91C6-6B6CC04BFF81</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>AwGo: Reading List
+==================
+This workflow demonstrates more complex fuzzy filtering, ordering items by status.</string>
+	<key>uidata</key>
+	<dict>
+		<key>1BA099BD-A04F-4304-91C6-6B6CC04BFF81</key>
+		<dict>
+			<key>xpos</key>
+			<integer>230</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>F3DFD0D4-B306-48DD-A915-34D3CF427B73</key>
+		<dict>
+			<key>note</key>
+			<string>Filters reading list, putting read books at the bottom.</string>
+			<key>xpos</key>
+			<integer>60</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>API_KEY</key>
+		<string>5fc87cef58bb80203d2207578309fab6</string>
+		<key>APP_ID</key>
+		<string>KNPXZI5B0M</string>
+		<key>INDEX</key>
+		<string>tailwindcss</string>
+		<key>LIMIT</key>
+		<string>10</string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>API_KEY</string>
+		<string>INDEX</string>
+		<string>APP_ID</string>
+	</array>
+	<key>version</key>
+	<string>0.1</string>
+	<key>webaddress</key>
+	<string>https://godoc.org/github.com/deanishe/awgo</string>
+</dict>
+</plist>
